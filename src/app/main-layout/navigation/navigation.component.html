@@ -1,0 +1,196 @@
+<!--Double navigation-->
+<!-- <header class="fixed-top" *ngIf="jwtAuthenticationService.isUserLoggedIn()"> -->
+<header class="fixed-top">
+    <!-- Sidebar navigation -->
+    <mdb-sidenav #sidenav class=" fixed" [fixed]="true" width="350">
+
+        <logo>
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper waves-light">
+                    <h3>
+                        <a class="breadcrumbs breadcrumb-dn mr-auto" routerLink="/task-dashboard" href="#"
+                            routerLinkActive="active">
+                            <img src="../../../assets/img/logo-sm.png" class="img-fluid flex-center" alt="todo">
+                        </a>
+                    </h3>
+                </div>
+            </li>
+            <!--/. Logo -->
+        </logo>
+
+        <links>
+
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <mdb-icon fas icon="tachometer-alt" class="mr-1"></mdb-icon> Dashboards
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();"
+                                            routerLink="task-dashboard" class="waves-effect" mdbWavesEffect>
+                                            <mdb-icon fas icon="arrow-right"></mdb-icon>Task Board
+                                        </a>
+                                    </li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <mdb-icon fas icon="cogs" class="mr-1"></mdb-icon> Setup
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();"
+                                            routerLink="setup-task-status" class="waves-effect" mdbWavesEffect>
+                                            <mdb-icon fas icon="arrow-right"></mdb-icon>Task Status
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();"
+                                            routerLink="setup-task-priority" class="waves-effect" mdbWavesEffect>
+                                            <mdb-icon fas icon="arrow-right"></mdb-icon>Task Priority
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();" routerLink="setup-user"
+                                            class="waves-effect" mdbWavesEffect>
+                                            <mdb-icon fas icon="arrow-right"></mdb-icon>Users
+                                        </a>
+                                    </li>
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+
+
+                        <mdb-item>
+                            <mdb-item-head mdbWavesEffect>
+                                <mdb-icon fas icon="file-pdf" class="mr-1"></mdb-icon>
+                                Reports
+                            </mdb-item-head>
+                            <mdb-item-body>
+                                <ul>
+                                    <li>
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();"
+                                            routerLink="task-report" class="waves-effect" mdbWavesEffect>
+                                            <mdb-icon fas icon="arrow-right"></mdb-icon>Task Report
+                                        </a>
+
+                                    </li>
+                                    <!-- <li *ngIf="jwtAuthenticationService.role == 'User'">
+                                        <a routerLinkActive="active" (click)="sidenav.toggle();"
+                                        routerLink="task-report-user" class="waves-effect" mdbWavesEffect>
+                                        <mdb-icon fas icon="arrow-right"></mdb-icon>Task Report User</a>
+
+                                    </li> -->
+                                </ul>
+                            </mdb-item-body>
+                        </mdb-item>
+                    </mdb-squeezebox>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </links>
+
+    </mdb-sidenav>
+    <!--/. Sidebar navigation -->
+
+    <!-- Navbar -->
+    <mdb-navbar SideClass="navbar navbar-expand-md scrolling-navbar double-nav" [containerInside]="false">
+        <navlinks class="navbar-container">
+            <!-- SideNav slide-out button -->
+            <div class="float-xs-left"
+                *ngIf="jwtAuthenticationService.isUserLoggedIn() && jwtAuthenticationService.role == 'Admin'">
+                <a (click)="sidenav.show()" class="button-collapse-non-fixed">
+                    <mdb-icon fas icon="bars"></mdb-icon>
+                </a>
+            </div>
+            <!--/. SideNav slide-out button -->
+        </navlinks>
+
+        <logo>
+            <a class="breadcrumbs breadcrumb-dn mr-auto" routerLink="/task-dashboard" href="#"
+                routerLinkActive="active">
+                <img src="../../../assets/img/logo-sm.png" class="img-fluid flex-center" height="30" alt="todo">
+            </a>
+        </logo>
+
+        <navlinks>
+
+            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav"
+                *ngIf="!jwtAuthenticationService.isUserLoggedIn()">
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect (click)="doSignUp()">
+                        <!-- <mdb-icon far icon="envelope" class="me-1"></mdb-icon> -->
+                        <span class="clearfix d-none d-sm-inline-block">Signup</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect>
+                        <span class="clearfix d-none d-sm-inline-block"> | </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect (click)="doSignIn()">
+                        <!-- <mdb-icon far icon="comments" class="mr-1"></mdb-icon> -->
+                        <span class="clearfix d-none d-sm-inline-block">Login</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav"
+                *ngIf="jwtAuthenticationService.isUserLoggedIn()">
+
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect>
+                        <mdb-icon fas icon="shopping-cart" class="mr-1" size="lg"></mdb-icon>
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <button type="button" mdbBtn color="danger" style="margin-left: -20px; height: 20px;
+          width: 20px; border-radius: 50%;  margin-top: -10px; font-size: 8pt;" class="p-1 waves-effect waves-light" 
+          placement="left" mdbWavesEffect> 5 </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect>
+                        <span class="clearfix d-none d-sm-inline-block"> | </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect>
+                        <!-- <mdb-icon far icon="comments" class="mr-1"></mdb-icon> -->
+                        <span class="clearfix d-none d-sm-inline-block">
+                            Welcome {{jwtAuthenticationService.userFullName}}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown btn-group" dropdown>
+                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        <mdb-icon fas icon="user" class="mr-1"></mdb-icon>
+                    </a>
+                    <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                        <a class="dropdown-item" routerLink="/profiles/profile1" href="#"
+                            routerLinkActive="active">Profile</a>
+                        <a class="dropdown-item" routerLink="/home-page" href="#" routerLinkActive="active">Home</a>
+                        <a class="dropdown-item" (click)="doLogout()" href="#" routerLinkActive="active">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+
+        </navlinks>
+
+    </mdb-navbar>
+    <!--/. Navbar -->
+
+</header>
+<!--/.Double navigation-->

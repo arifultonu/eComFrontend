@@ -1,0 +1,153 @@
+<div class="modal-content" [config]="{backdrop: true, ignoreBackdropClick: false}">
+	<div class="modal-header">
+		<button type="button" mdbBtn color="danger" size="sm" class="close pull-right mt-.5 me-1 " aria-label="Close"
+			(click)="modalRef.hide()">
+			<span aria-hidden="true">
+				<mdb-icon fas icon="times"></mdb-icon>
+			</span>
+		</button>
+		<h6 class="modal-title w-100 text-center" id="myModalLabel">Login Form</h6>
+	</div>
+	<div class="modal-body">
+		<form>
+
+			<!-- <div class="md-form form-sm">
+				<input id="userId" type="text" class="form-control form-control-sm" formControlName="username" mdbInput>
+				<label for="userId">User ID/Name</label>
+			</div>
+
+			<div class="md-form form-sm">
+				<input id="password" type="password" class="form-control form-control-sm" formControlName="password"
+					mdbInput>
+				<label for="password">Password</label>
+			</div> -->
+			<div class="md-form">
+				<input mdbInput type="text" id="form3" class="text-dark form-control" [(ngModel)]="username"
+					[ngModelOptions]="{standalone: true}">
+				<label for="form3" class="text-white">
+					<mdb-icon fas icon="user" class="text-dark active"></mdb-icon>
+					<span style="color:#000; padding-left: 15px; font-weight: 200;">User id/name
+					</span>
+				</label>
+			</div>
+			<div class="md-form">
+				<input mdbInput type="password" id="form4" class="text-dark form-control" [(ngModel)]="password"
+					[ngModelOptions]="{standalone: true}">
+				<label for="form4" class="text-white">
+					<mdb-icon fas icon="lock" class="text-dark active"></mdb-icon>
+					<span style="color:#000; padding-left: 15px; font-weight: 300;">Password</span>
+				</label>
+
+			</div>
+			<div class="inline-ul text-center d-flex justify-content-center">
+				<div class="p-2 form-check">
+					<mdb-checkbox [default]="true" [checked]="true" class="text-dark">
+						Remember me </mdb-checkbox>
+				</div>
+				<a routerLink="/forgot-password" routerLinkActive="active" class="p-2 text-green">
+					Forgot Password? </a>
+			</div>
+		</form>
+
+
+
+	</div>
+	<div class="modal-footer">
+
+
+
+		
+
+		<button (click)="doSignUp()" mdbBtn rounded="true" class="mr-4 pull-left " size="md" mdbWavesEffect
+			routerLinkActive="active" [disabled]="loading">
+			Sign up</button>
+		<!-- <button type="button" mdbBtn color="secondary" class="waves-light" size="sm" aria-label="Close"
+			(click)="modalRef.hide()" mdbWavesEffect>Close
+		</button> -->
+		<button (click)="doLoginWithJWTAuth()" mdbBtn color="primary" rounded="true" size="md" mdbWavesEffect
+			routerLinkActive="active" [disabled]="loading">
+			<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+			Login</button>
+	</div>
+</div>
+
+
+
+
+<!-- <section class="view intro intro-2">
+	<div class="full-bg-img mask rgba-gradient">
+		<div class="container flex-center">
+			<div class="d-flex align-items-center content-height w-100">
+
+				<div class="row flex-center pt-5 mt-3 w-100">
+
+					<div class="col-md-6 text-center text-md-left mb-5">
+						<div class="text-white">
+						</div>
+					</div>
+
+					<div class="pl-5 col-md-6 col-xl-5 offset-xl-1">
+						<form>
+							<mdb-card class="ml-5 mb-5 wow fadeInRight" data-wow-delay="0.3s">
+								<mdb-card-body>
+									<div class="text-center">
+										<h3 class="white-text">
+											<span class="mb-0 fas .z-depth-1-half">
+												<img src="../../../assets/img/logo-sm.png"
+													class="img-fluid flex-center" alt="ToDo App">
+											</span>											
+										</h3>
+										<hr class="hr-blue">
+									</div>
+
+									<div class="md-form">
+										<input mdbInput type="text" id="form3" class="text-dark form-control"
+											[(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+										<label for="form3" class="text-white">
+											<mdb-icon fas icon="user" class="text-dark active"></mdb-icon>
+											<span style="color:#000; padding-left: 15px; font-weight: 200;">User id/name
+												</span>
+										</label>
+									</div>
+									<div class="md-form">
+										<input mdbInput type="password" id="form4" class="text-dark form-control"
+											[(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+										<label for="form4" class="text-white">
+											<mdb-icon fas icon="lock" class="text-dark active"></mdb-icon>
+											<span
+												style="color:#000; padding-left: 15px; font-weight: 300;">Password</span>
+										</label>
+									</div>
+
+									<div class="text-center">
+										<button (click)="doSignUp()" mdbBtn rounded="true" class="mr-4"
+											size="md" mdbWavesEffect routerLinkActive="active" [disabled]="loading">
+											Sign up</button>
+
+										<button (click)="doLoginWithJWTAuth()" mdbBtn color="primary" rounded="true"
+											size="md" mdbWavesEffect routerLinkActive="active" [disabled]="loading">
+											<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+											Login</button>
+
+										<hr class="hr-blue">
+										<div class="inline-ul text-center d-flex justify-content-center">
+											<div class="p-2 form-check">
+												<mdb-checkbox [default]="true" [checked]="true" class="text-dark">
+													Remember me </mdb-checkbox>
+											</div>
+											<a routerLink="/forgot-password" routerLinkActive="active"
+												class="p-2 text-green">
+												Forgot Password? </a>
+										</div>
+									</div>
+
+								</mdb-card-body>
+
+							</mdb-card>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->

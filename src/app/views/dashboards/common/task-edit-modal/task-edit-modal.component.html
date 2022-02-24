@@ -1,0 +1,46 @@
+<div class="modal-content" [config]="{backdrop: false, ignoreBackdropClick: false}">
+  <div class="modal-header">
+    <button type="button" mdbBtn color="danger" size="sm" class="close pull-right mt-.5 me-1 " aria-label="Close"
+      (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <mdb-icon fas icon="times"></mdb-icon>
+      </span>
+    </button>
+    <h6 class="modal-title w-100" id="myModalLabel">
+      <mdb-icon fas icon="square" size="sm" class="me-1" style="color: rgb(255, 36, 72);">
+      </mdb-icon> {{editableRow.taskDetails}}
+    </h6>
+  </div>
+
+  <div class="modal-body">
+    <table mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+      <tr *ngFor="let el2 of elements">
+        <td class="text-left" style="font-size: 11pt;">   
+            <mdb-icon fas icon="comments" size="sm"></mdb-icon>
+            <span style="color: rgb(3, 94, 185);" class="me-1"> User Id- {{el2.assignUserId}}:  
+              <mdb-icon fas icon="quote-left" class="pl-1 pr-1" size="sm"></mdb-icon>{{el2.comments}} </span>         
+          <hr/>
+        </td>
+      </tr>
+    </table>
+    <hr />
+
+    <form [formGroup]="form">
+      <div class="md-form form-sm">
+        <textarea id="comments" type="text" class="md-textarea form-control form-control-sm" rows="1"
+          formControlName="comments" mdbInput mdbValidate [validateSuccess]="false"></textarea>
+        <label for="comments">+ Comment:</label>
+        <mdb-error *ngIf="comments.invalid && (comments.dirty || comments.touched)">Input is required</mdb-error>
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mdbBtn color="secondary" class="waves-light" size="sm" aria-label="Close"
+      (click)="modalRef.hide()" mdbWavesEffect>Close
+    </button>
+    <button type="button" mdbBtn color="primary" class="relative waves-light" size="sm" mdbWavesEffect
+      [disabled]="form.invalid" (click)="submitComment(); modalRef.hide()">Save
+    </button>
+  </div>
+</div>

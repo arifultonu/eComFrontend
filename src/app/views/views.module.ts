@@ -78,6 +78,10 @@ import { UserRegistrationModalComponent } from './pages/user-registration-modal/
 import { TaskReportComponent } from './pages/task-report/task-report.component';
 import { TaskReportUserComponent } from './pages/task-report-user/task-report-user.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductCartComponent } from './pages/product-cart/product-cart.component';
+import { ProductCheckoutComponent } from './pages/product-checkout/product-checkout.component';
+import { OrderReceivedComponent } from './pages/order-received/order-received.component';
 
 @NgModule({
   imports: [
@@ -163,6 +167,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     TaskReportComponent,
     TaskReportUserComponent,
     HomePageComponent,
+    ProductDetailsComponent,
+    ProductCartComponent,
+    ProductCheckoutComponent,
+    OrderReceivedComponent,
   ],
   exports: [
     FooterComponent,

@@ -24,7 +24,7 @@ import { BnNgIdleService } from 'bn-ng-idle';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         MDBBootstrapModulesPro.forRoot(),

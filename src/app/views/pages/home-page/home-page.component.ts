@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtAuthenticationService } from 'src/app/services/security/jwt-authentication.service';
 
 @Component({
@@ -10,11 +11,19 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private jwtAuthenticationService: JwtAuthenticationService,
+    private router: Router,
 
   ) { }
 
   ngOnInit(): void {
-    
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
+
+gotoProductDetailsPage(){
+  this.router.navigate(['product-details']);
+}
+
+
 
 }

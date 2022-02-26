@@ -1,5 +1,5 @@
 
-<section class="mb-5" style="margin-top: -30px;">
+<section class="mb-5" style="margin-top: -60px;">
 <mdb-carousel class="carousel slide carousel-fade"  [type]="'carousel-thumbnails'" [animation]="'fade'">
     <mdb-carousel-item>
       <!-- <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).webp" alt="First slide"> -->
@@ -33,7 +33,7 @@
               <div class="view view-cascade overlay hm-white-slight">
                   <img src="../../../assets/img/products/medicine-1.jpg"
                       class="img-fluid" alt="">
-                  <a href="#">
+                  <a (click)="gotoProductDetailsPage()">
                       <div class="mask"></div>
                   </a>
               </div>
@@ -44,12 +44,11 @@
                   <h4 class="card-title font-bold mb-3"><strong>Antibiotic Medicine</strong></h4>
                   <!--Text-->
                   <p class="card-text">Brand-	ALL BRAND AVAILABLE
-                    Form-	Tablet
+                    Form- Tablet
                     Manufacturer Name-	All available
                     Composition-	Antibiotic
                     Usages-	Bacterial infections
-                    Side Effects-	Nausea, Headache, Diarrhea.
-                      
+                    Side Effects-	Nausea, Headache, Diarrhea.                      
                   </p>
               </mdb-card-body>
 
@@ -60,12 +59,16 @@
                           <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                       </a>
                       <a>
-                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 600
                       </a>
                   </span>
                   <span class="text-right right">
-                      <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                              class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" routerLink="/product-cart"
+                    color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
+                      <!--<a type="button" mdbutton href="" class="waves-effect p-2">Add to Cart 
+                          <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon>
+                        </a> -->
                   </span>
               </mdb-card-footer>
 
@@ -110,12 +113,12 @@
                           <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                       </a>
                       <a>
-                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 800
                       </a>
                   </span>
                   <span class="right">
-                      <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                              class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
                   </span>
               </mdb-card-footer>
 
@@ -158,12 +161,12 @@
                         <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                     </a>
                     <a>
-                        <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                        <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 400
                     </a>
                 </span>
                 <span class="right">
-                    <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                            class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
                 </span>
             </mdb-card-footer>
 
@@ -212,12 +215,12 @@
                           <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                       </a>
                       <a>
-                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 700
                       </a>
                   </span>
                   <span class="right">
-                      <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                              class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
                   </span>
               </mdb-card-footer>
 
@@ -259,12 +262,12 @@
                         <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                     </a>
                     <a>
-                        <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                        <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 600
                     </a>
                 </span>
                 <span class="right">
-                    <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                            class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
                 </span>
             </mdb-card-footer>
 
@@ -309,12 +312,12 @@
                           <mdb-icon fas icon="share-alt" class="mr-2"></mdb-icon>
                       </a>
                       <a>
-                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>10
+                          <mdb-icon far icon="heart" class="mr-2"></mdb-icon>৳ 600
                       </a>
                   </span>
                   <span class="right">
-                      <a href="" class="waves-effect p-2">Live Preview <mdb-icon fas icon="eye"
-                              class="ml-1"></mdb-icon></a>
+                    <button mdbBtn type="button" color="info" outline="true" size="sm" mdbWavesEffect>Add to Cart 
+                        <mdb-icon fas icon="cart-plus" class="ml-1"></mdb-icon></button>
                   </span>
               </mdb-card-footer>
 

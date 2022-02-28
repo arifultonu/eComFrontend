@@ -67,10 +67,12 @@ import { RouteGuardService } from './services/security/route-guard.service';
 import { TaskReportComponent } from './views/pages/task-report/task-report.component';
 import { TaskReportUserComponent } from './views/pages/task-report-user/task-report-user.component';
 import { HomePageComponent } from './views/pages/home-page/home-page.component';
-import { ProductDetailsComponent } from './views/pages/product-details/product-details.component';
-import { ProductCartComponent } from './views/pages/product-cart/product-cart.component';
-import { ProductCheckoutComponent } from './views/pages/product-checkout/product-checkout.component';
-import { OrderReceivedComponent } from './views/pages/order-received/order-received.component';
+
+import { ProductDetailsComponent } from './views/e-com/product-details/product-details.component';
+import { ProductCartComponent } from './views/e-com/product-cart/product-cart.component';
+import { ProductCheckoutComponent } from './views/e-com/product-checkout/product-checkout.component';
+import { OrderReceivedComponent } from './views/e-com/order-received/order-received.component';
+import { UserProfileComponent } from './views/e-com/user-profile/user-profile.component';
 
 
 const routes: Route[] = [
@@ -90,6 +92,13 @@ const routes: Route[] = [
   { path: 'product-cart', component: ProductCartComponent, canActivate:[RouteGuardService]}, 
   { path: 'product-checkout', component: ProductCheckoutComponent, canActivate:[RouteGuardService]}, 
   { path: 'order-received', component: OrderReceivedComponent, canActivate:[RouteGuardService]}, 
+  // { path: 'user-profile', component: UserProfileComponent, canActivate:[RouteGuardService]}, 
+  {
+    path: 'e-com',
+    children: [
+      { path: 'user-profile', component: UserProfileComponent , canActivate: [RouteGuardService] },
+    ],
+  },
 
   {
     path: 'dashboards',

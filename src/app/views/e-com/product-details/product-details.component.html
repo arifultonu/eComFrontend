@@ -2,7 +2,8 @@
     <div>
         <img class="d-block w-100" src="../../../assets/img/Brudcumb.jpg" alt="First slide">
     </div>
-    <div style="padding-left:150px; font-size: 16pt; font-weight: 400; margin-top: -50px; color: azure;">Product/Details</div>
+    <div style="padding-left:150px; font-size: 16pt; font-weight: 400; margin-top: -50px; color: azure;">Product/Details
+    </div>
 </section>
 <section class="mb-9 mt-5">
     <div class="row gx-lg-5">
@@ -125,20 +126,21 @@
                     </table>
                 </div>
 
-                <hr class="my-5" />
+                <hr class="my-2" />
 
                 <form action="">
                     <div class="row">
                         <!-- Quantity -->
                         <div class="col-md-6 mb-4">
                             <div class="form-outline">
+                                <label class="form-label" for="typeNumber">Quantity: </label>
                                 <input mdbinput type="number" id="typeNumber" class="form-control sm" value="1"
-                                    min="1" />
-                                <label class="form-label" for="typeNumber">Quantity</label>
+                                    min="1" />                               
                             </div>
                         </div>
                         <!-- Size -->
-                        <div class="col-md-6 mb-4">
+                        <!-- <div class="col-md-6 mb-4">
+                            <label class="form-label select-label"> Size: </label>
                             <select class="select">
                                 <option value="1">1 Box</option>
                                 <option value="2">5 Boxes</option>
@@ -146,8 +148,8 @@
                                 <option value="4">25 Boxes</option>
                                 <option value="5">50 Boxes</option>
                             </select>
-                            <label class="form-label select-label"> Quantity</label>
-                        </div>
+                           
+                        </div> -->
 
                         <!-- Colors -->
                         <!-- <div class="col-md-6 mb-4">
@@ -201,7 +203,7 @@
                     </div>
 
                     <button type="button" (click)="gotoProductCartPage()" class="btn btn-primary btn-rounded me-2">
-                        <i class="fas fa-cart-plus me-2"></i>Add to cart
+                        <i class="fas fa-cart-plus pr-2"></i>Add to cart
                     </button>
                     <button href="#" type="button" class="btn btn-danger btn-rounded" data-mdb-toggle="tooltip"
                         title="Add to wishlist">
@@ -222,7 +224,7 @@
     <div class="row">
         <div class="col-md-7 mb-4">
             <!-- Single review -->
-            <div class="shadow-4 p-4 rounded-5 mb-5">
+            <div class="shadow-4 p-4 rounded-5 mb-5" style="border: 1px solid aliceblue;">
                 <img class="shadow-1-strong rounded-circle mb-3" style="width: 40px"
                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" alt="Sample" />
                 <p class="mb-3 fw-bold">Alan Turing</p>
@@ -257,7 +259,7 @@
             <!-- Single review -->
 
             <!-- Single review -->
-            <div class="shadow-4 p-4 rounded-5 mb-5">
+            <div class="shadow-4 p-4 rounded-5 mb-5" style="border: 1px solid aliceblue;">
                 <img class="shadow-1-strong rounded-circle mb-3" style="width: 40px"
                     src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" alt="Sample" />
                 <p class="mb-3 fw-bold">Veronica Smith</p>
@@ -294,10 +296,9 @@
             <!-- Single review -->
         </div>
 
-        <div class="col-md-5 mb-4">
-            <form>
+        <div class="col-md-5 mb-4" style="border: 1px solid aliceblue;">
+            <form class="pt-5">
                 <p>Rate this product</p>
-
                 <ul class="rating d-flex justify-content-center mb-4" data-mdb-toggle="rating" data-mdb-value="3">
                     <li>
                         <i class="far fa-star fa-sm text-primary" title="Bad"></i>
@@ -317,23 +318,23 @@
                 </ul>
 
                 <!-- Name input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form5Example1" class="form-control" />
-                    <label class="form-label" for="form5Example1">Name</label>
+
+                <div class="md-form md-outline">
+                    <input id="form-sm" class="form-control form-control" type="text" mdbInput />
+                    <label class="form-label" for="form6Example4">Name</label>
                 </div>
 
                 <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="email" id="form5Example2" class="form-control" />
-                    <label class="form-label" for="form5Example2">Email address</label>
+                <div class="md-form md-outline">
+                    <input id="form-sm" class="form-control form-control" type="text" mdbInput />
+                    <label class="form-label" for="form6Example4">Email address</label>
                 </div>
 
                 <!-- Textarea -->
-                <div class="form-outline mb-4">
-                    <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                    <label class="form-label" for="textAreaExample">Your review</label>
+                <div class="md-form md-outline">
+                    <input id="form-sm" class="form-control form-control" type="text" mdbInput />
+                    <label class="form-label" for="form6Example4">Your review</label>
                 </div>
-
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary mb-4">
                     Submit

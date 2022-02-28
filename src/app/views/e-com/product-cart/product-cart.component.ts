@@ -15,12 +15,10 @@ export class ProductCartComponent implements OnInit {
   ngOnInit(): void {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-
   }
 
-  
-  gotoProductCheckOutPage(){
-  this.router.navigate(['product-checkout']);
-}
+  gotoProductCheckOutPage() {
+    this.router.navigate(['product-checkout']);
+  }
 
 }
